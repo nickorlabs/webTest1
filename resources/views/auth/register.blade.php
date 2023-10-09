@@ -1,7 +1,9 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('admin.store') }}">
         @csrf
-
+        <div style="text-align: center;">
+            <x-input-label :value="__('Admin Registration Form')" />
+        </div>
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />

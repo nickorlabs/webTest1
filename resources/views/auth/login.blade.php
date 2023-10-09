@@ -4,7 +4,9 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
+        <div style="text-align: center;">
+            <x-input-label :value="__('Only Admin Can Login')" />
+        </div>
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />

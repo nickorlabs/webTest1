@@ -71,6 +71,11 @@ return [
     */
 
     'timezone' => 'UTC',
+    'recaptcha' => [
+        'site_key' => env('RECAPTCHA_SITE_KEY'),
+        'secret_key' => env('RECAPTCHA_SECRET_KEY'),
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +170,8 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
@@ -183,6 +190,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Captcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+
     ])->toArray(),
 
 ];
